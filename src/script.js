@@ -24,7 +24,6 @@ const cursor = {
 window.addEventListener('mousemove', (event) => {
     cursor.x = event.clientX / sizes.width - 0.5
     cursor.y = - (event.clientY / sizes.height - 0.5)
-    /* console.log("y: " + cursor.y + "\n" + "x: " + cursor.x) */
 })
 
 /* Base */
@@ -77,16 +76,6 @@ gui.add(parameters, 'spin')
 // Camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
-/* const camera = new THREE.PerspectiveCamera(fild of view, aspect ratio, near, far)
---Field of view: vertical vision angle (in degrees), also called fov
---Aspect ratio: usually width / height of the element that will contain the scene
---Near: objects closer than the near value will not be rendered
-
-const camera = new THREE.OrthographicCamera(left, right, top, bottom, near, far)
-*/
-// const aspectRatio = sizes.width / sizes.height
-// console.log(aspectRatio)
-// const camera = new THREE.OrthographicCamera(-1 * aspectRatio, 1 * aspectRatio, 1, -1, 0.1, 100)
 camera.position.z = 1.2
 camera.position.y = 1
 camera.position.x = 1
@@ -128,13 +117,6 @@ const tick = () =>
     window.requestAnimationFrame(tick)
 
     window.addEventListener('buttons', rotationButtons)
-
-    //Buttons
-    /* let galleryButton = document.getElementById("gallery-button")
-    galleryButton.addEventListener("click", () => {
-        gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y: mesh.rotation.y + (Math.PI * 2.25)})
-    }) */
-
 }
 
 gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y:(Math.PI * 2.22)})
