@@ -43,15 +43,6 @@ header {
   height: 100%;
 }
 
-/* .header--container-canva {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
- */
-
  .header--container-canva {
   position: relative;
     width: 150px;
@@ -76,10 +67,6 @@ header {
   position: relative;
   top: 20px;
   padding: 10% 20%;
-  /* width: 257px;
-  height: 50px;
-  padding: 15px 82px 15px 78px; */
-  /* padding: 15px 70px 15px 80px; */
 
   /* Efectos de diseño */
   border: 4px solid var(--official-purple, #B15EEC);
@@ -155,8 +142,7 @@ header {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  text-align: left;
-  /* display: inline-block; */
+  text-align: center;
   display: flex;
   width: calc(100% - 30%);
   flex-direction: column;
@@ -164,7 +150,7 @@ header {
 
   /* Styles */
   color: #FFF;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 24px;
   font-weight: 400;
 }
@@ -186,9 +172,6 @@ header {
   color: var(--white);
   margin-bottom: 40px;
   width: 90%;
-  /* min-width: 320px;
-  max-width: 900px;
-  text-align: center; */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -199,7 +182,6 @@ header {
   height: auto;
   margin: 0 auto;
   text-align: left;
-  /* display: inline-block; */
   display: flex;
   width: calc(100% - 30%);
   flex-direction: column;
@@ -223,20 +205,3 @@ header {
   background-size: cover;
   background-position: 100;
 }
-
-/* .main-about-container-content {
-  width: 90%;
-  min-width: 320px;
-  max-width: 900px;
-  margin: 0 auto;
-  flex-direction: column;
-} */
-
-/* 
-text-align: center;
-font-family: Lato;
-font-size: 43.2px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-*/

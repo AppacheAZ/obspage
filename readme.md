@@ -1,4 +1,4 @@
-# Three.js Journey
+# OBS (Official Barbershop)
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
