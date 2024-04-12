@@ -2,6 +2,25 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import * as data from 'dat.gui'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import Swiper from 'swiper'
+import 'swiper/css';
+
+var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows : true,
+    },
+    loop: true,
+  });
+
+THREE.ColorManagement.enabled = false
 
 /* Debug */
 const gui = new data.GUI()
@@ -15,6 +34,7 @@ const parameters = {
 /* Textures */
 const textureLoader = new THREE.TextureLoader()
 const matcapTexture = textureLoader.load('/textures/matcaps/10.png')
+const basicMaterial = new THREE.MeshBasicMaterial()
 
 /* Cursor */
 const cursor = {
@@ -32,14 +52,14 @@ const canvas = document.querySelector('canvas.header--container-canva')
 
 // Sizes
 const sizes = {
-    width: window.innerWidth * 0.7,
-    height: window.innerHeight * 0.7
+    width: window.innerWidth, //* 0.7,
+    height: window.innerHeight //* 0.7
 }
 
 window.addEventListener('resize', () => 
 {
-    sizes.width = window.innerWidth * 0.7
-    sizes.height = window.innerHeight * 0.7
+    sizes.width = window.innerWidth,// * 0.7
+    sizes.height = window.innerHeight //* 0.7
 
     // Update camera
     camera.aspect = sizes.width / sizes.height
@@ -50,7 +70,6 @@ window.addEventListener('resize', () =>
 
     // Update pixel ratio
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
 })
 
 // Scene
@@ -64,21 +83,29 @@ const mesh = new THREE.Mesh(
     new THREE.BoxGeometry(0.8, 1.5, 0.2, 5, 5, 5),
     material
 )
+
+const ground = new THREE.Mesh(
+    new THREE.SphereGeometry(2, 0.1, 2),
+    basicMaterial
+)
+
+ground.castShadow = true
+ground.receiveShadow = true
+ground.position.set(0, -1, 0)
+
+
+//scene.add(ground)
 scene.add(mesh)
-// Debug
-gui.add(mesh.position, 'y').min(-3).max(3).step(0.01).name('elevation')
-gui.add(mesh, 'visible').name('visibility')
-gui.addColor(parameters, 'color').onChange(() => {
-    mesh.material.color.set(parameters.color)
-})
-gui.add(parameters, 'spin')
+const ambientLight = new THREE.AmbientLight(0xffffff, 0)
+scene.add(ambientLight)
+gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001).name('Ambient Light Intensity')
 
 // Camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 1.2
 camera.position.y = 1
-camera.position.x = 1
+camera.position.x = 1.6
 //camera.lookAt(mesh.position)
 scene.add(camera)
 
@@ -95,12 +122,14 @@ controls.minPolarAngle = Math.PI / 2 // to limit the rotation
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    alpha: true
 })
 /* renderer.setSize(sizes.width, sizes.height) */
 renderer.setSize(sizes.width, sizes.height)
-renderer.setClearColor('#0E1010', 1)
-//console.log(camera.position.length())
+/* console.log(camera.position.length()) */
+/* renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap */
 
 // Animate
 const clock = new THREE.Clock()

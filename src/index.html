@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OBS 1.0</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Outfit:wght@100;300;400&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/887a835504.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -18,7 +20,6 @@
             </div>
         </div>
     </header>      
-    <script type="module" src="./script.js"></script>
     <main>
         <section class="main-about-container">
             <div class="main-about-container--title">
@@ -38,16 +39,129 @@
                 <h2>SERVICES</h2>
                 <p>Experiment our premier services that will elevate your value instantly</p>
             </div>
-            <div class="main-services-container-content">
-                <div class="servicesImg" src="../static/imgs/servicesGroup.png"></div>
+                    <div class="main-services-container-content1">
+                        <p class="service-title">Prueba 1</p>
+                        <div class="service-table-container">
+                            <table>
+                                <tr>
+                                    <td class="table__top-left">Classic Haircut</td>
+                                    <td class="table__top-right table__right">
+                                        <span class="line"></span>20€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Delux Haircut</td>
+                                    <td class="table__right">
+                                        <span class="line"></span>40€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table__bottom-left">Kids Haircut</td>
+                                    <td class="table__bottom-right table__right">
+                                        <span class="line"></span>15€
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="service-container-date">
+                           <p><b>Actualizado:</b> 10 Abril 4:02pm</p>
+                        </div>
+                    </div>
+                    <div class="main-services-container-conten2">
+                        <p class="service-title">Prueba 2</p>
+                        <div class="service-table-container">
+                            <table>
+                                <tr>
+                                    <td class="table__top-left">Beard Trim</td>
+                                    <td class="table__top-right table__right">
+                                        <span class="line"></span>15€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hot towel shave</td>
+                                    <td class="table__right">
+                                        <span class="line"></span>30€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table__bottom-left">Mustache trim</td>
+                                    <td class="table__bottom-right table__right">
+                                        <span class="line"></span>15€
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="service-container-date">
+                            <p><b>Actualizado:</b> 10 de Abril 9:40pm</p>
+                        </div>
+                    </div>
+                    <div class="main-services-container-content3">
+                        <p class="service-title">Prueba 3</p>
+                        <div class="service-table-container">
+                            <table>
+                                <tr>
+                                    <td class="table__top-left">Hair color</td>
+                                    <td class="table__top-right table__right">
+                                        <span class="line"></span>15€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Face Facial</td>
+                                    <td class="table__right">
+                                        <span class="line"></span>30€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table__bottom-left">Hair wash</td>
+                                    <td class="table__bottom-right table__right">
+                                        <span class="line"></span>10€
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="service-container-date">
+                            <p><b>Actualizado:</b> 10 de Abril 10:07pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class = "main-cards-container">
+            <div id="contentItemsCarrusel">
+                <div class="itemCarrusel" id="tarjeta1">
+                    <div class="tarjetaCarrusel" id="tarjeta1">
+                        <div class="backgroundImg img1" src="/static/imgs/1.png"></div>
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#tarjeta3"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#tarjeta2"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="tarjeta2">
+                    <div class="tarjetaCarrusel" id="tarjeta2">
+                        <div class="backgroundImg img2" src="/static/imgs/2.png"></div>
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#tarjeta1"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#tarjeta3"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="tarjeta3">
+                    <div class="tarjetaCarrusel" id="tarjeta3">
+                        <div class="backgroundImg img3" src="/static/imgs/3.png"></div>
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#tarjeta2"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#tarjeta1"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
         <section></section>
         <section></section>
         <section></section>
-        <section></section>
-        <section></section>
     </main>
+    <script type="module" src="./script.js"></script>
     <footer></footer>
 </body>
 </html>
