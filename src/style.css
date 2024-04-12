@@ -346,6 +346,15 @@ header {
   text-align: center;
 }
 
+.main-bootstrap-container {
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--black);
+  text-align: center;
+}
+
 .backgroundImg {
   width: 320px;
   height: 390px;
