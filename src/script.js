@@ -2,24 +2,6 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import * as data from 'dat.gui'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import Swiper from 'swiper'
-import 'swiper/css';
-
-var swiper = new Swiper('.swiper-container', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows : true,
-    },
-    loop: true,
-  });
-
 THREE.ColorManagement.enabled = false
 
 /* Debug */
