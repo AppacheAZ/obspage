@@ -55,7 +55,20 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
- 
+
+.header--container-canva {
+  position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 280px;
+    height: 1000px;
+    margin-top: -100px;
+    align-self: center;
+    size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .header-container-buttons {
   position: absolute;
   left: calc(50% - 150px);
