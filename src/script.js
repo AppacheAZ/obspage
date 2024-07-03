@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import * as data from 'dat.gui'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 THREE.ColorManagement.enabled = false
 
 /* Debug */
@@ -12,6 +13,7 @@ const parameters = {
         gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y: mesh.rotation.y + (Math.PI * 2.25)})
     }
 }
+
 
 /* Textures */
 const textureLoader = new THREE.TextureLoader()
@@ -56,6 +58,21 @@ window.addEventListener('resize', () =>
 
 // Scene
 const scene = new THREE.Scene()
+
+/* Models */
+const gltfLoader = new GLTFLoader()
+
+gltfLoader.load(
+    '/models/Duck.gltf',
+    console.log('success'),
+    (gltf) =>
+    {
+        /* gltf.scene.scale.set(1, 1, 1)
+        scene.add(gltf.scene) */
+        console.log(gltf)
+    },
+
+)
 
 const material = new THREE.MeshMatcapMaterial()
 material.matcap = matcapTexture

@@ -34,7 +34,7 @@ header {
   min-width: 320px;
   height: 100vh;
   text-align: center;
-  background-color: var(--dark-gray);
+  background-color: var(--black);
 }
 
 .header--container {
