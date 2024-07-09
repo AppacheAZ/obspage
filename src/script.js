@@ -63,13 +63,28 @@ const scene = new THREE.Scene()
 const gltfLoader = new GLTFLoader()
 
 gltfLoader.load(
-    '/models/Duck.gltf',
-    console.log('success'),
+    '/models/totem/obs.gltf',
     (gltf) =>
     {
-        /* gltf.scene.scale.set(1, 1, 1)
-        scene.add(gltf.scene) */
-        console.log(gltf)
+        gltf.scene.scale.set(0.1, 0.1, 0.1)
+        scene.add(gltf.scene)
+        gsap.to(gltf.scene.rotation, {duration: 1, delay: 0.4, y:(Math.PI * 2.22)})
+        function rotationButtons() {
+            const galleryButton = document.getElementById("gallery-button")
+            const reserveButton = document.getElementById("reserve-button")
+            galleryButton.addEventListener("click", () => {
+                gsap.to(gltf.scene.rotation, {duration: 1, delay: 0.4, y: gltf.scene.rotation.y + (Math.PI * 2.25),
+                    redirection:() => {
+                        setTimeout(() => {
+                            window.location.href = "./gallery.html";
+                        }, 1100);
+                    }})
+            })
+            reserveButton.addEventListener("click", () => {
+                gsap.to(gltf.scene.rotation, {duration: 1, delay: 0.4, y: gltf.scene.rotation.y + (Math.PI * 2.25)*2})
+            })  
+        }
+        rotationButtons();
     },
 
 )
@@ -94,17 +109,31 @@ ground.position.set(0, -1, 0)
 
 
 //scene.add(ground)
-scene.add(mesh)
+/* scene.add(mesh) */
 const ambientLight = new THREE.AmbientLight(0xffffff, 0)
 scene.add(ambientLight)
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001).name('Ambient Light Intensity')
+//Lights
+const directionalLight1 = new THREE.DirectionalLight(0xffffff, 15)
+directionalLight1.position.set(1, 0, -2)
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 15)
+directionalLight2.position.set(2, 0, 1)
+scene.add(directionalLight1, directionalLight2)
+const directionalLight3 = new THREE.DirectionalLight(0xffffff, 15)
+directionalLight3.position.set(1, 0, 2)
+const DirectionalLight4 = new THREE.DirectionalLight(0xffffff, 15)
+DirectionalLight4.position.set(-2, 0, 1)
+const DirectionalLight5 = new THREE.DirectionalLight(0xffffff, 15)
+DirectionalLight5.position.set(0, -2, 0)
+DirectionalLight5.rotateY(Math.PI * 0.5)
 
+scene.add(directionalLight1, directionalLight2, directionalLight3, DirectionalLight4, DirectionalLight5)
 // Camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
-camera.position.z = 1.2
-camera.position.y = 1
-camera.position.x = 1.6
+camera.position.z = 0
+camera.position.y = 0
+camera.position.x = 0.3
 //camera.lookAt(mesh.position)
 scene.add(camera)
 
@@ -147,24 +176,6 @@ const tick = () =>
     window.addEventListener('buttons', rotationButtons)
 }
 
-gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y:(Math.PI * 2.22)})
-
 tick()
 
 //Buttons
-function rotationButtons() {
-    const galleryButton = document.getElementById("gallery-button")
-    const reserveButton = document.getElementById("reserve-button")
-    galleryButton.addEventListener("click", () => {
-        gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y: mesh.rotation.y + (Math.PI * 2.25),
-            redirection:() => {
-                setTimeout(() => {
-                    window.location.href = "./gallery.html";
-                }, 1100);
-            }})
-    })
-    reserveButton.addEventListener("click", () => {
-        gsap.to(mesh.rotation, {duration: 1, delay: 0.4, y: mesh.rotation.y + (Math.PI * 2.25)*2})
-    })  
-}
-rotationButtons();
