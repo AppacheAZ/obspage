@@ -6,8 +6,10 @@ export default {
     base: './',
     server:
     {
+        port: 3000,
         host: true,
-        open: !isCodeSandbox // Open if it's not a CodeSandbox
+        open: !isCodeSandbox, // Open if it's not a CodeSandbox
+        hmr: true,
     },
     build:
     {

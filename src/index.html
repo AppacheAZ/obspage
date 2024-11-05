@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBS 2.0</title>
+    <title>Official Barbershop</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Outfit:wght@100;300;400&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 1000px)" />
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 1000px)">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/887a835504.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="">
-                <canvas class="header--container-canva"></canvas>
+                <canvas class="header--container-canva"> <!-- The webGL animation of the logo is renderer here --> </canvas> 
             </div>
             <div class="header-container-buttons">
-                <button id="gallery-button" class="gallery-button">GALLERY</button>
-                <button href="#plans" id="reserve-button" class="reserve-button">BOOK NOW</button>
+                <button href="#plans" id="reserve-button" class="reserve-button">RESERVAR</button>
+                <button id="gallery-button" class="gallery-button">GALERÍA</button>
             </div>
         </div>
-    </header>      
+    </header>
     <main>
         <section class="main-about-container">
             <div class="main-about-container--title">
-                <h1>ABOUT US</h1>
+                <h1>SOBRE NOSÓTROS</h1>
             </div>
             <div class="main-about-container-content">
                 <div class="backgroundImg" src="../static/imgs/fotoAbout.jpg" alt="bilbao OfficialBarberShop"></div>
@@ -34,6 +34,24 @@
                     <p>Ultimate men's grooming experience at Official Barbershop: impeccable style, personal care, 
                     and transformation. Skilled barbers deliver flawless haircuts and unique styles, reflecting your personality. 
                     Timeless and contemporary looks that boost confidence!</p>
+                </div>
+            </div>
+        </section>
+        <section id="motion-map" class="main-map-container">
+            <div class="map-container--title">
+                <h2>Ubicación</h2>
+                <p>Encuentranos en el corazón de Bilbao</p>
+            </div>
+            <div class="map-content--container">
+                <div id="map" class="map"> <!-- The webGL animation is rendered here --> </div>
+                <div class="map-content--description">
+                    <p>Official Barbershop esta ubicado en el centro de algorta a unos pocos minutos del metro de bidezabal en un barrio con gente cercana y muy maja para toda la familia y rellebar este texto con coooosas </p>
+                    <button class="map-button" id="map-button">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.536 9.8218L11.536 0.821797C11.146 0.431797 10.516 0.431797 10.126 0.821797L1.126 9.8218C0.735996 10.2118 0.735996 10.8418 1.126 11.2318L10.126 20.2318C10.516 20.6218 11.146 20.6218 11.536 20.2318L20.536 11.2318C20.926 10.8518 20.926 10.2218 20.536 9.8218ZM12.826 13.0318V10.5318H8.826V12.5318C8.826 13.0818 8.376 13.5318 7.826 13.5318C7.276 13.5318 6.826 13.0818 6.826 12.5318V9.5318C6.826 8.9818 7.276 8.5318 7.826 8.5318H12.826V6.0318L15.976 9.1818C16.176 9.3818 16.176 9.6918 15.976 9.8918L12.826 13.0318Z" fill="black"/>
+                        </svg>
+                        Cómo llegar
+                    </button>
                 </div>
             </div>
         </section>
@@ -172,19 +190,31 @@
                 </article>
             </section>
         </section>
+        <section id="reviews" class="main-reviews-container">
+            <div class="reviews--title">
+                <h2><n>Experiencias reales</n></h2>
+                <p>En Official Barbershop, no solo trabajamos con estilo, trabajamos con confianza.</p>
+            </div>
+            <section id="reviews-slider" class="reviews-container--slider">
+                <!-- El contenido de las reseñas se insertara aqui-->
+            </section>
+            <section class="reviews-button">
+                <button id="reviews-button" class="reviews-button--ca">Cuenta tu experiencia</button>
+            </section>
+        </section>
+        <footer>
+            <section class="leftimage">
+                <div class="footerlogo" src="../static/imgs/SVG/logo.svg"></div>
+            </section>
+            <section class="rightlist">
+                <ul>
+                    <li><a href="https://www.instagram.com/officialbarbeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" alt="oficialbarbershopinstagram obs">ABOUT</a></li>
+                    <li><a href="https://maps.app.goo.gl/dBmYbGuDhvBrzxQe9" alt="officialbarbershoplocation location googlemaps obs">LOCATION</a></li>
+                    <li><a href="https://www.instagram.com/officialbarbeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" alt="oficialbarbershopinstagram obs">CONTACT</a></li>
+                </ul>
+            </section>
+        </footer>
     </main>
     <script type="module" src="./script.js"></script>
-    <footer>
-        <section class="leftimage">
-            <div class="footerlogo" src="../static/imgs/SVG/logo.svg"></div>
-        </section>
-        <section class="rightlist">
-            <ul>
-                <li><a href="https://www.instagram.com/officialbarbeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" alt="oficialbarbershopinstagram obs">ABOUT</a></li>
-                <li><a href="https://www.instagram.com/officialbarbeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" alt="oficialbarbershopinstagram obs">LOCATION</a></li>
-                <li><a href="https://www.instagram.com/officialbarbeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" alt="oficialbarbershopinstagram obs">CONTACT</a></li>
-            </ul>
-        </section>
-    </footer>
 </body>
 </html>

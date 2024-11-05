@@ -1,16 +1,19 @@
 {
-  "name": "threejs-journey-exercise",
+  "name": "official-barbershop-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.58.1",
     "vite": "^4.3.9"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
+    "@googlemaps/three": "^4.0.13",
     "bootstrap": "^5.3.3",
     "dat.gui": "^0.7.9",
     "gsap": "^3.12.1",

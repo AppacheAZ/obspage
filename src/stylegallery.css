@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Bajern';
-    src: url('/static/fonts/');
+    src: url('/static/fonts/Bajern.otf');
     /* Agrega otros atributos de fuente como font-weight y font-style si es necesario */
   }  
 
@@ -21,7 +21,6 @@
 
 body {
     font-family: 'Bajern', sans-serif;
-    font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
     color: var(--white);
@@ -30,7 +29,6 @@ body {
 
 body h1 {
     font-family: 'Bajern', sans-serif;
-    font-weight: 100;
     font-size: 4rem;
     text-align: center;
     margin-bottom: 20px;
