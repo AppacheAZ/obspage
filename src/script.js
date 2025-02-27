@@ -219,6 +219,7 @@ const loader2 = new Loader({
     apiKey: GOOGLE_MAPS_API_KEY, // Import your Google Places API key from the config.js file
     version: "weekly",
     libraries: ["places"],
+    language: "es"
 });
 
 loader2.load().then(async () => {
