@@ -41,7 +41,7 @@ const parameters = {
 
 /* Textures */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('/textures/matcaps/10.png')
+const matcapTexture = textureLoader.load('/textures/matcaps/5.png')
 const basicMaterial = new THREE.MeshBasicMaterial()
 
 /* Cursor */
@@ -80,7 +80,7 @@ window.addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-// Scene
+// Scecode .
 const scene = new THREE.Scene()
 
 /* Models */
@@ -88,7 +88,7 @@ const scene = new THREE.Scene()
 const gltfLoader = new GLTFLoader()
 
     gltfLoader.load(
-        '/models/index/totemOBS.gltf',
+        '/models/index/totem-obs-gold.gltf',
         (gltf) => {
             gltf.scene.scale.set(0.1, 0.1, 0.1);
             gltf.scene.position.set(0, -0.026, 0);

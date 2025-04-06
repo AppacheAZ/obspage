@@ -9,7 +9,9 @@
 
 :root {
   /* Colores */
-  --official-purple: #B15EEC;
+  --official-gold: #FFD700;
+  --official-gold-transparency-1: #ffd90012;
+  --official-gold-transparency-2: #ffd90042;
   --black: #0E1010;
   --dark-gray: #272D2B;
   --gray: #8D8D8D;
@@ -30,7 +32,7 @@
 }
 
 :hover::-webkit-scrollbar-thumb {
-  background-color: var(--official-purple);
+  background-color: var(--official-gol);
 }
 
 * {
@@ -110,9 +112,8 @@ header {
   padding: 7% 20%;
   border: 2px solid var(--white, #B15EEC);
   border-radius: 88.8px;
-  background: rgba(177, 94, 236, 0.10);
-  background-color: rgba(177, 94, 236, 0.10);
-  color: var(--white, #B15EEC);
+  background: var(--official-gold-transparency-1);
+  background-color: var(--official-gold-transparency-1);
   font-family: Lato;
   font-size: 1.5rem;
   font-weight: bold;
@@ -124,9 +125,9 @@ header {
 }
 
 .reserve-button{
-  background: rgba(177, 94, 236, 0.10);
-  color: var(--official-purple);
-  border: 2px solid var(--official-purple); 
+  background: var(--official-gold-transparency-1);
+  color: var(--official-gold);
+  border: 2px solid var(--official-gold); 
 }
 
 .gallery-button{
@@ -140,7 +141,7 @@ header {
   transition: background-color 1s ease, transform 1s ease;
 }
 .reserve-button:hover{
-  background: rgba(177, 94, 236, 0.3);
+  background: var(--official-gold-transparency-2);
   transition: background-color 1s ease, transform 1s ease;
 }
 
@@ -158,7 +159,7 @@ header {
   height: auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--official-purple);
+  background: linear-gradient(var(--black), var(--official-gold), var(--black));
   text-align: center;
 }
 
@@ -301,7 +302,7 @@ i {
   height: 104.28px;
   top: -52px;
   left: calc(50% - 20.88px);
-  background-image: url('../static/imgs/SVG/logo.svg');
+  background-image: url('../static/imgs/SVG/logo-obs-gold.svg');
 }
 
 .product-detail--title {
@@ -371,21 +372,21 @@ i {
 }
 
 .scissors{
-  background-image: url('../static/imgs/SVG/scissor.svg');
+  background-image: url('../static/imgs/SVG/scissor-gold.svg');
 }
 
 .beard{
-  background-image: url('../static/imgs/SVG/beard.svg');
+  background-image: url('../static/imgs/SVG/beard-gold.svg');
 }
 
 .product{
-  background-image: url('../static/imgs/SVG/product.svg');
+  background-image: url('../static/imgs/SVG/product-gold.svg');
 }
 
 .barber-img-container {
   width: 100%;
   height: 60vh;
-  background-image: url('../static/imgs/barber.jpg');
+  background-image: url('../static/imgs/barber-gold3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -468,7 +469,7 @@ i {
   font-family: Lato;
   font-size: 1.4rem;
   line-height: 1.8rem;
-  color: var(--official-purple);
+  color: var(--official-gold);
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -507,7 +508,7 @@ i {
   height: 30px;
   padding: 5px;
   border-radius: 20px;
-  background-color: var(--official-purple);
+  background-color: var(--official-gold);
   color: var(--white);
 }
 
@@ -516,7 +517,7 @@ i {
   height: 45px;
   margin-top: 10px;
   background-color: var(--white-transparent);
-  border: 2px solid var(--official-purple);
+  border: 2px solid var(--official-gold);
   border-radius: 10px;
   color: var(--white);
   font-weight: bold;
@@ -524,7 +525,7 @@ i {
 }
 
 .plans-container--card--ca:hover {
-  background-color: var(--official-purple);
+  background-color: var(--official-gold);
   color: var(--white);
   transition: background-color 1s ease, transform 1s ease;
 }
@@ -646,6 +647,7 @@ i {
   margin-bottom: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .reviews--card-time {
@@ -666,11 +668,10 @@ i {
   line-height: 0.5rem;
   align-items: center;
 
-  border: 2px solid var(--official-purple);
+  border: 2px solid var(--official-gold);
   border-radius: 30px;
-  background: rgba(177, 94, 236, 0.10);
-  background-color: rgba(177, 94, 236, 0.10);
-  color: var(--official-purple);
+  background-color: var(--official-gold-transparency-1);
+  color: var(--official-gold);
   font-family: Lato;
   font-size: 1rem;
   font-weight: bold;
@@ -680,11 +681,11 @@ i {
 
 .reviews-button--ca:active{
   transform: scale(0.9);
-  background: rgba(177, 94, 236, 0.3);
+  background: var(--official-gold-transparency-2);
 }
 
 .reviews-button--ca a{
-  color: var(--official-purple);
+  color: var(--official-gold);
   text-decoration: none;
 }
 
@@ -711,7 +712,7 @@ footer .main-footer-container{
 }
 
 .footerlogo{
-  background-image: url('../static/imgs/SVG/logo.svg');
+  background-image: url('../static/imgs/SVG/logo-obs-gold.svg');
   width: 41.76px;
   height: 104.28px;
   background-size: cover;
@@ -776,7 +777,7 @@ footer .footer-container-socialnetworks ul{
 
 
 .svg-icon{
-  fill: var(--official-purple);
+  fill: var(--official-gold);
 }
 
 footer .sign-footer-section{
@@ -925,9 +926,9 @@ footer .sign-footer-section{
   min-width: 80%(320px);
   padding-top: 10px;
   padding-bottom: 10px;
-  background: var(--official-purple);
-  background-color: var(--official-purple);
-  border: 2px solid var(--official-purple);
+  background: var(--official-gold);
+  background-color: var(--official-gold);
+  border: 2px solid var(--official-gold);
 
   align-items: center;
   font-family: Lato, sans-serif;
