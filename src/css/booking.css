@@ -1,0 +1,194 @@
+
+:root {
+    /* Colores */
+    --official-gold: #FFD700;
+    --official-gold-transparency-1: #ffd90012;
+    --official-gold-transparency-2: #ffd90042;
+    --black: #0E1010;
+    --dark-gray: #272D2B;
+    --gray: #8D8D8D;
+    --white: #fff;
+    --white-transparent: rgba(255, 255, 255, 0.1);
+  
+  }
+
+  ::-webkit-scrollbar {
+    /* display: none; */
+    background-color: var(--black);
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  :hover::-webkit-scrollbar-thumb {
+    background-color: var(--official-gold);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  main {
+    height: 100%;
+    background-color: var(--black);
+  }
+  
+  .main-booking-container {
+    width: 100%;
+    min-width: 320px;
+    height: 700px;
+    padding-bottom: 35vh;
+    text-align: center;
+    background-color: var(--black);
+  }
+  
+  .booking--title {
+    width: 100%;
+    min-width: 288px;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 40px;
+  }
+  
+  .booking--title h2 {
+    font-family: Lato;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    padding-top: 50px;
+  }
+
+  .booking--title p {
+    font-family: Lato, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: var(--white);
+  }
+
+  .booking-container--slider{
+    display: flex;
+    justify-content: center;
+  }
+
+  .booking-container--section {
+    display: flex;
+    height: 390px;
+    overflow-x: scroll; /* show the content behind toverflow in x axys*/
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; /* which scroll and i */
+    scroll-snap-align: center;
+    gap: 30px;
+  }
+  
+  .booking-container--card {
+    position: relative;
+    width: 100%;
+    min-width: 200px;
+    max-width: 230px;
+    height: 340px;
+    margin: 15px 25px 0;
+    padding: 15px 0px;
+    background-color: var(--white-transparent);
+    border-radius: 30px;
+    box-shadow: 0 4 10px rgba(0, 0, 0, 1);
+  }
+  
+  .booking-container--card h3 {
+    font-family: Lato;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  
+  .booking-container--card--info {
+    position: relative;
+    width: 100%;
+    height: 85%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .booking-container--card--info h3 {
+    font-family: Lato;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--official-gold);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .card-background-svg svg {
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+  }
+
+  .card-barber-img {
+    position: relative;
+    z-index: 1;
+    width: 120px;
+    height: 80%;
+    overflow: hidden;
+    margin-top: 35px;
+    box-shadow: 0 4 10px rgba(0, 0, 0, 1);
+  }
+
+  .card-barber-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .booking-container--card--btn {
+    width: 150px;
+    height: 45px;
+    margin-top: 0px;
+    background-color: var(--white-transparent);
+    border: 2px solid var(--official-gold);
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+    line-height: 1.8rem;
+    z-index: 2;
+  }
+  
+  .booking-container--card--btn:hover {
+    background-color: var(--official-gold);
+    color: var(--dark-gray);
+    transition: background-color 1s ease, transform 1s ease;
+  }
+
+  .booking-container--card--btn:active {
+    background-color: var(--official-gold);
+    color: var(--dark-gray);
+    transform: scale(0.85);
+    transition: background-color 1s ease, transform 1s ease;
+  }
+

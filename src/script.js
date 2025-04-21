@@ -121,7 +121,7 @@ const gltfLoader = new GLTFLoader()
                         y: gltf.scene.rotation.y + ((Math.PI * 2) * 2),
                         onComplete: () => {
                             setTimeout(() => {
-                                window.location.href = GOOGLE_CALENDAR_LINK; // Link to the Google Calendar appointment
+                                window.location.href = "./booking.html"; // Link to the Google Calendar appointment
                             }, 1100);
                         }
                     });
@@ -133,11 +133,6 @@ const gltfLoader = new GLTFLoader()
     );
 
 /*-----------------------------------------------------------> LANDING PAGE SCENE <--------------------------------------------------------------*/
-
-// Material
-const material = new THREE.MeshMatcapMaterial()
-material.matcap = matcapTexture
-
 // Object
 const ground = new THREE.Mesh(
     new THREE.SphereGeometry(2, 0.1, 2),
@@ -252,11 +247,11 @@ loader2.load().then(async () => {
         console.log('✅ Three.js scene was initialized:', sceneMap);
 
         const gltfLoaderMaps = new GLTFLoader();
-        const url = "/models/index/totemOBS.gltf";
+        const url = "/models/index/totem-obs-gold.gltf";
         const material = new THREE.MeshStandardMaterial();
         material.roughness = 0.1;
         material.metalness = 0.5;
-        material.map = textureLoader.load('/textures/matcaps/10.png');
+        material.map = textureLoader.load('/textures/matcaps/shiny-gold.jpg');
 
         gltfLoaderMaps.load(url, (gltf) => {
             console.log('✅ 3D model was loaded:', gltf);
@@ -379,12 +374,35 @@ function displayReviews(reviews) {
 
     reviews.forEach(review => {
         const rating = parseInt(review.rating);
+        const starSVG = `
+            <svg
+                width="4.4428811mm"
+                height="4.2283921mm"
+                viewBox="0 0 4.4428811 4.2283921"
+                version="1.1"
+                id="svg1"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs1">
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff8b0" />
+                    <stop offset="50%" stop-color="#ffd700" />
+                    </linearGradient>
+                </defs>
+                <path
+                    style="opacity:1;fill:url(#goldGradient);stroke-width:0.264999"
+                    id="path5"
+                    d="m -560.56909,317.85407 -97.66409,-51.07684 -97.44314,51.4971 18.3971,-108.66768 -79.08824,-76.76045 109.03411,-16.08348 48.56393,-98.937674 48.98969,98.727544 109.10239,15.61361 -78.75682,77.10045 z"
+                    transform="matrix(0.01407359,0,0,0.01407359,11.489208,-0.25085772)" />
+            </svg>`;
+        const stars = Array(rating).fill(starSVG).join('');
         const reviewHTML = `
             <article class="reviews-container--card">
                 <div class="reviews-container--card--info">
                     <img src="${review.profile_photo_url}" alt="${review.author_name}"/>
                     <h2 class="reviews--card-title">${review.author_name}</h2>
-                    <p class="reviews--card-rating"><small class="text-muted">${'⭐'.repeat(rating)}</small></p>
+                    <p class="reviews--card-rating"><small class="text-muted">${stars}</small></p>
                 </div>
                 <h3 class="reviews--card-text">${review.text}</h3>
                 <p class="reviews--card-time">${review.relative_time_description}</p>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1.0318774mm"
+   height="2.0796292mm"
+   viewBox="0 0 1.0318774 2.0796292"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient6"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffd700;stop-opacity:1;"
+         offset="0.82600731"
+         id="stop7" />
+      <stop
+         style="stop-color:#ffd700;stop-opacity:0;"
+         offset="1"
+         id="stop8" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6"
+       id="linearGradient8"
+       x1="66.521622"
+       y1="106.52804"
+       x2="66.506149"
+       y2="108.60585"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-65.981058,-106.51024)">
+    <path
+       style="font-size:3.175px;font-family:Bajern;-inkscape-font-specification:Bajern;opacity:0.48;fill:url(#linearGradient8);stroke-width:0.265"
+       d="m 65.98106,106.76107 0.14605,0.12065 v 0.97155 l 0.3175,0.26352 0.250825,-0.21907 v 0.47625 l 0.3175,-0.26035 v -1.60338 l -0.3175,0.2667 v 1.11443 l -0.250825,-0.21273 v -0.9906 l -0.18415,-0.16192 z m 0.22225,1.64147 0.2286,0.18733 0.263525,-0.2159 -0.231775,-0.1905 z"
+       id="text1"
+       aria-label="Y"
+       inkscape:export-filename="text1.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

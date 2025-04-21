@@ -17,12 +17,13 @@
   --gray: #8D8D8D;
   --white: #fff;
   --white-transparent: rgba(255, 255, 255, 0.1);
+  --white-transparent-2: rgba(255, 255, 255, 0.5);
 
 }
 
 ::-webkit-scrollbar {
   /* display: none; */
-  background-color: transparent;
+  background-color: var(--black);
   width: 5px;
   height: 5px;
 }
@@ -190,6 +191,15 @@ header {
   padding-bottom: 50px;
 }
 
+.swiper-button-prev, .swiper-button-next {
+  color: var(--white-transparent-2) !important;
+  filter: drop-shadow(0 4px 8px var(--dark-gray)) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--official-gold) !important;
+}
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -204,6 +214,7 @@ header {
 
 .swiper-slide-1 {
   background-image: url("../static/imgs/obs-about.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -212,6 +223,7 @@ header {
 
 .swiper-slide-2 {
   background-image: url("../static/imgs/obs-about2.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -220,6 +232,7 @@ header {
 
 .swiper-slide-3 {
   background-image: url("../static/imgs/obs-about3.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -227,6 +240,7 @@ header {
 }
 .swiper-slide-4 {
   background-image: url("../static/imgs/obs-about4.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -234,6 +248,7 @@ header {
 }
 .swiper-slide-5 {
   background-image: url("../static/imgs/obs-about5.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -260,17 +275,18 @@ header {
 .main-about-container--text {
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 30px 0px;
   text-align: center;
   display: flex;
-  width: calc(100% - 30%);
+  width: 100%;
+  min-width: 320px;
   flex-direction: column;
   justify-content: center;
 
   /* Styles */
   color: #FFF;
   font-family: Lato, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -303,12 +319,15 @@ header {
 
 .img1 {
   background-image: url("../static/imgs/obs-store.png");
+  background-size: cover;
 }
 .img2 {
   background-image: url("../static/imgs/obs-working.png");
+  background-size: cover;
 }
 .img3 {
   background-image: url("../static/imgs/obs-grafitti-v3.png");
+  background-size: cover;
 }
 
 #contentItemsCarrusel {
@@ -430,7 +449,7 @@ i {
 }
 
 .product-card-body {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.8rem;  
   color: var(--gray);
@@ -446,6 +465,12 @@ i {
 
 .product{
   background-image: url('../static/imgs/SVG/product-gold.svg');
+  background-size: contain !important;
+}
+
+.hair-color{
+  background-image: url('../static/imgs/SVG/haircolor-gold.svg');
+  background-size: contain !important;
 }
 
 .barber-img-container {
@@ -466,159 +491,11 @@ i {
   color: var(--white);
 }
 
-.main-plans-container {
-  width: 100%;
-  min-width: 320px;
-  padding-bottom: 80px;
-  text-align: center;
-}
-
-.plans--title {
-  width: 100%;
-  min-width: 288px;
-  height: auto;
-  padding-top: 10vh;
-  padding-bottom: 40px;
-}
-
-.plans--title h2 {
-  font-family: Lato;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--white);
-  padding-top: 50px;
-}
-
-.plans--title p {
-  font-family: Lato;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.8rem;
-  color: var(--white);
-}
-
-.main-plans-container {
-  width: 100%;
-  height: 700px;
-  min-width: 320px;
-  padding-bottom: 35vh;
-  background-color: var(--black);
-}
-
-.plans-container--card {
-  position: relative;
-  width: 100%;
-  min-width: 230px;
-  max-width: 300px;
-  height: 310px;
-  margin: 15px 25px 0;
-  padding: 15px;
-  background-color: var(--white-transparent);
-  border-radius: 30px;
-  box-shadow: 0 4 10px rgba(0, 0, 0, 1);
-}
-
-.plans-container--card h3 {
-  font-family: Lato;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
-.plans-container--card--info {
-  position: relative;
-}
-
-.plans-container--card--info h3 {
-  font-family: Lato;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  color: var(--official-gold);
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.plans-container--card--price{
-  font-family: Lato;
-  font-size: 5rem;
-  font-weight: bold;
-  line-height: 6.3rem;
-  color: var(--white);
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.plans-container--card--price span{
-  position: absolute;
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: var(--white);
-  top: 30px;
-}
-
-.plans-container--card--advice{
-  font-family: Lato, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--gray);
-}
-
-.recomend {
-  position: absolute;
-  top: -15px;
-  font-size: 0.8rem;
-  left: calc(50% - 60px);
-  width: 120px;
-  height: 30px;
-  padding: 5px;
-  border-radius: 20px;
-  background-color: var(--official-gold);
-  color: var(--white);
-}
-
-.plans-container--card--ca {
-  width: 150px;
-  height: 45px;
-  margin-top: 10px;
-  background-color: var(--white-transparent);
-  border: 2px solid var(--official-gold);
-  border-radius: 10px;
-  color: var(--white);
-  font-weight: bold;
-  line-height: 1.8rem;
-}
-
-.plans-container--card--ca:hover {
-  background-color: var(--official-gold);
-  color: var(--white);
-  transition: background-color 1s ease, transform 1s ease;
-}
-
-.plans-container--slider {
-  display: flex;
-  height: 350px;
-  overflow-x: scroll; /* show the content behind toverflow in x axys*/
-  overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory; /* which scroll and i */
-  scroll-snap-align: center;
-  gap: 30px;
-}
-
-.plans-container--card {
-  position: relative;
-  scroll-snap-align: center;
-  width: 100%;
-  min-width: 230px;
-  max-width: 300px;
-}
-
 .main-reviews-container {
   width: 100%;
   height: auto;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 280px;
   background-color: var(--black);
   text-align: center;
 }
@@ -663,7 +540,8 @@ i {
   position: relative;
   scroll-snap-align: center;
   width: 100%;
-  max-width: 700px;
+  min-width: 320px;
+  max-width: 500px;
   height: 190px;
   margin: 0px 25px 0;
   padding: 15px;
@@ -675,6 +553,7 @@ i {
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 0px;
 }
 
 .reviews-container--card--info img {
@@ -689,7 +568,8 @@ i {
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: var(--white);
-  margin-right: 35px;
+  margin-right: 15px;
+  margin-bottom: 0px;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -697,10 +577,22 @@ i {
   max-width: 250px;
 }
 
+.reviews-container--card--info p {
+  margin-bottom: 0px;
+}
+
 .reviews--card-rating {
   margin-left: auto;
   font-size: 1.2rem;
   text-align: right;
+}
+
+.text-muted{
+  display: inline-flex;
+}
+
+.text-muted svg{
+  margin: 2px;
 }
 
 .reviews--card-text {
@@ -710,9 +602,12 @@ i {
   color: var(--white);
   margin-top: 20px;
   margin-bottom: 10px;
-  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* For future compatibility */
+  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden;
 }
 
 .reviews--card-time {
@@ -752,138 +647,6 @@ i {
 .reviews-button--ca a{
   color: var(--official-gold);
   text-decoration: none;
-}
-
-footer .main-footer-container{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  min-width: 320px;
-  height: auto;
-  background-color: var(--black);
-  justify-content: center;
-  align-items: center;
-  padding: 0 7%;
-}
-
-.main-footer-container section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-container-logo{
-  width: auto;
-}
-
-.footerlogo{
-  background-image: url('../static/imgs/SVG/logo-obs-gold.svg');
-  width: 41.76px;
-  height: 104.28px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-footer .footer-container-schedule{
-  width: auto;
-  height: auto;
-  color: var(--white);
-  font-size: 2.5vh;
-  text-decoration: none;
-}
-
-footer .footer-container-schedule ul{
-  list-style: none;
-}
-
-.footer-container-schedule ul li:first-child {
-  line-height: 2.5; /* Interlineado específico para la primera línea */
-}
-
-footer .footer-container-branches{
-  width:auto;
-  height: auto;
-  color: var(--white);
-  font-size: 2.5vh;
-  text-decoration: none;
-}
-
-footer .footer-container-branches ul{
-  list-style: none;
-}
-
-.footer-container-branches ul li:first-child {
-  line-height: 2.5;
-}
-
-footer .footer-container-socialnetworks{
-  width:auto;
-  height: auto;
-  color: var(--white);
-  font-size: 2.5vh;
-  text-decoration: none;
-}
-
-footer .footer-container-socialnetworks ul{
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-container-socialnetworks li:nth-last-child(-n+2) a {
-  display: block;
-  text-align: center;
-}
-
-.footer-container-socialnetworks ul li:first-child {
-  line-height: 2.5;
-}
-
-
-.svg-icon{
-  fill: var(--official-gold);
-}
-
-footer .sign-footer-section{
-  display: block;
-  width: 100%;
-  min-width: 320px;
-  height: auto;
-  padding-top: 3.5vh;
-  padding-bottom: 3.5vh;
-  background-color: var(--black);
-  text-align: center;
-}
-
-.sign-footer-section a{
-  text-decoration: none;
-  color: var(--white);
-}
-
-.sign-container-links{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 0 15px;
-}
-
-.sign-container-links a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  font-weight: bold;
-  font-size: 2.5vh;
-}
-
-.sign-container-name{
-  height: auto;
-  width: auto;
-  padding-top: 2vh;
-  color: var(--gray);
-  font-size: 0.8rem;
 }
 
 @media (max-width: 1200px) {
@@ -969,9 +732,8 @@ footer .sign-footer-section{
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
   background-color: var(--black);
+  margin: 0px 15px;
 }
 
 .map-content--description p {

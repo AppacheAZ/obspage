@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Barbershop</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Official Barbershop" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Outfit:wght@100;300;400&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 1000px)">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="header-container">
+        <div class="header-container" id="header">
             <div class="">
                 <canvas class="header--container-canva"> <!-- The webGL animation of the logo is renderer here --> </canvas> 
             </div>
@@ -24,14 +32,11 @@
         </div>
     </header>
     <main>
-        <section class="main-about-container">
+        <section class="main-about-container" id="about">
             <div class="main-about-container--title">
                 <h1>SOBRE NOSÓTROS</h1>
             </div>
             <div class="main-about-container-content">
-                <!-- <div class="backgroundImg" src="../static/imgs/fotoAbout.jpg" alt="bilbao OfficialBarberShop">
-
-                </div> -->
                 <!-- Slider main container -->
                  <div class="swiper-container">
                     <div class="swiper aboutSwiper">
@@ -39,19 +44,19 @@
                         <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img class="swiper-slide-1" src="../static/imgs/obs-about.png">
+                            <img class="swiper-slide-1">
                         </div>
                         <div class="swiper-slide">
-                            <img class="swiper-slide-2" src="../static/imgs/obs-about2.png">
+                            <img class="swiper-slide-2">
                         </div>
                         <div class="swiper-slide">
-                            <img class="swiper-slide-3" src="../static/imgs/obs-about3.png">
+                            <img class="swiper-slide-3">
                         </div>
                         <div class="swiper-slide">
-                            <img class="swiper-slide-4" src="../static/imgs/obs-about4.png">
+                            <img class="swiper-slide-4">
                         </div>
                         <div class="swiper-slide">
-                            <img class="swiper-slide-5" src="../static/imgs/obs-about5.png">
+                            <img class="swiper-slide-5">
                         </div>
     
                         </div>
@@ -62,13 +67,12 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
                     </div>
                  </div>
                 <div class="main-about-container--text">
-                    <p>Ultimate men's grooming experience at Official Barbershop: impeccable style, personal care, 
-                    and transformation.</p>
+                    <p>
+                        Vive la experiencia definitiva con nosotros: cortes de cabello de un nivel superior, afeitados clásicos y cuidados personalizados.
+                    </p>
                 </div>
             </div>
         </section>
@@ -80,7 +84,13 @@
             <div class="map-content--container">
                 <div id="map" class="map"> <!-- The webGL animation is rendered here --> </div>
                 <div class="map-content--description">
-                    <p>Official Barbershop esta ubicado en el centro de algorta a unos pocos minutos del metro de bidezabal en un barrio con gente cercana y muy maja para toda la familia y rellebar este texto con coooosas </p>
+                    <p>
+                        Estamos ubicados en el corazón de Algorta a pocos minutos de Bilbao. 
+                    </p>
+                    <p>
+                        Visitanos para vivir una experiencia
+                        de barbería única, cerca de ti. Haz click en el botón para saber como llegar fácilmente a OfficialBarbeshop.
+                    </p>
                     <button class="map-button" id="map-button">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.536 9.8218L11.536 0.821797C11.146 0.431797 10.516 0.431797 10.126 0.821797L1.126 9.8218C0.735996 10.2118 0.735996 10.8418 1.126 11.2318L10.126 20.2318C10.516 20.6218 11.146 20.6218 11.536 20.2318L20.536 11.2318C20.926 10.8518 20.926 10.2218 20.536 9.8218ZM12.826 13.0318V10.5318H8.826V12.5318C8.826 13.0818 8.376 13.5318 7.826 13.5318C7.276 13.5318 6.826 13.0818 6.826 12.5318V9.5318C6.826 8.9818 7.276 8.5318 7.826 8.5318H12.826V6.0318L15.976 9.1818C16.176 9.3818 16.176 9.6918 15.976 9.8918L12.826 13.0318Z" fill="black"/>
@@ -100,7 +110,7 @@
                   </div>
                   <div class="carousel-item">
                     <div class="d-block w-100" id="tarjeta2">
-                        <div class="backgroundImg img2" src="/static/imgs/2.png" alt="product detail card"></div>
+                        <div class="backgroundImg img2" alt="product detail card"></div>
                     </div>
                   </div>
                   <div class="carousel-item">
@@ -119,7 +129,7 @@
                 </button>
               </div>
         </section>
-        <section class="main-product-detail">
+        <section class="main-product-detail" id="product-detail">
                 <span class = "product-detail--obslogo"></span>
                 <div class = "product-detail--title">
                     <h2>Ofrecemos un servicio sin comparación</h2>
@@ -128,71 +138,48 @@
                 <section class="product-cards--container">
                     <article class="product-detail--card">
                         <span class="iconcard scissors"></span>
-                        <p class="product-card-title">Haircut</p>
+                        <p class="product-card-title">Corte de cabello</p>
                         <p class="product-card-body">
-                            Suitable for men who want to look cool but still neat
+                            Desde clásicos hasta los fades mas modernos, tenemos todo lo necesario para cuidar cada detalle.
+                        </p>
+                        <p class="product-card-body">
+                            Asesoramiento personalizado y una experiencia pensada para el hombre actual.
                         </p>
                     </article>
                     <article class="product-detail--card">
                         <span class="iconcard beard"></span>
-                        <p class="product-card-title">Beard Trim</p>
+                        <p class="product-card-title">Recorte de barba</p>
                         <p class="product-card-body">
-                            Suitable for men who want to look cool but still neat
+                            Define tu estilo con un perfilado de barba impecable. 
+                        </p>
+                        <p class="product-card-body">
+                            Usamos técnicas precisas, navaja tradicional y productos de calidad para resaltar tu rostro y mantener tu barba saludable y bien cuidada.
+                        </p>
+                    </article>
+                    <article class="product-detail--card">
+                        <span class="iconcard hair-color"></span>
+                        <p class="product-card-title">Coloración de cabello</p>
+                        <p class="product-card-body">
+                            Escoge entre una gran variedad de colores sin comprometer la salud de tu cabello.
+                        </p>
+                        <p class="product-card-body">
+                            Desde tonos naturales hasta colores mas vibrantes, usamos productos profesionales para lograr un resultado uniforme y duradero.
                         </p>
                     </article>
                     <article class="product-detail--card">
                         <span class="iconcard product"></span>
-                        <p class="product-card-title">Haircolor</p>
+                        <p class="product-card-title">Kits de productos</p>
                         <p class="product-card-body">
-                            Suitable for men who want to look cool but still neat.
-                            Crazy colors for you to choose.
+                            Lleva la experiencia completa de Official Barbeshop a casa con nuestros kits exclusivos.
                         </p>
-                    </article>
-                    <article class="product-detail--card">
-                        <span class="iconcard product"></span>
-                        <p class="product-card-title">Haircolor</p>
                         <p class="product-card-body">
-                            Suitable for men who want to look cool but still neat.
-                            Crazy colors for you to choose.
+                            Incluyen shampoo para barba, bálsamo, aceites, peines y todo lo necesario para mantener tu estilo impecable todos los días.
                         </p>
                     </article>
                 </section>
         </section>
         <section class="barber-img-container" alt="barber cut barbershop">
             <h2>Conócenos hoy</h2>
-        </section>
-        <section id="plans" class="main-plans-container">
-            <div class="plans--title">
-                <h2>Escoge el plan que mejor se ajuste a ti</h2>
-                <p>Planes mensuales y anuales de nuestas reservas</p>
-            </div>
-            <section class="plans-container--slider">
-                <article class="plans-container--card planscard1">
-                    <p class="recomend">Recomendado</p>
-                    <div class="plans-container--card--info">
-                        <h3>Pago anual</h3>
-                        <p class="plans-container--card--price">150<span>€</span></p>
-                        <p class="plans-container--card--advice">*Ahorra trayendo un flyer</p>
-                        <button class="plans-container--card--ca">Ecoger este plan</button>
-                    </div>
-                </article>
-                <article class="plans-container--card planscard1">
-                    <div class="plans-container--card--info">
-                        <h3>Pago trimestral</h3>
-                        <p class="plans-container--card--price">60<span>€</span></p>
-                        <p class="plans-container--card--advice">*Ahorra trayendo un flyer</p>
-                        <button class="plans-container--card--ca">Ecoger este plan</button>
-                    </div>
-                </article>
-                <article class="plans-container--card planscard1">
-                    <div class="plans-container--card--info">
-                        <h3>Pago mensual</h3>
-                        <p class="plans-container--card--price">20<span>€</span></p>
-                        <p class="plans-container--card--advice">*Ahorra trayendo un flyer</p>
-                        <button class="plans-container--card--ca">Ecoger este plan</button>
-                    </div>
-                </article>
-            </section>
         </section>
         <section id="reviews" class="main-reviews-container">
             <div class="reviews--title">
@@ -215,7 +202,7 @@
                     <ul alt="dirección ubicación tiendas algorta bilbao getxo más">
                         <li><a><b>NUESTRAS BARBERÍAS</b></a></li>
                         <li><a>Aldapa Kalea, 14, 48991 Getxo</a></li>
-                        <li><a>Villarías Kalea, 1, 48001 Bilbo</a></li>
+                        <li><a>Villarías Kalea, 1, 48001 Bilbao</a></li>
                     </ul>
                 </section>
                 <section class="footer-container-schedule">
