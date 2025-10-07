@@ -324,6 +324,7 @@ header {
 .img2 {
   background-image: url("../static/imgs/obs-working.png");
   background-size: cover;
+  width: 460px;
 }
 .img3 {
   background-image: url("../static/imgs/obs-grafitti-v3.png");

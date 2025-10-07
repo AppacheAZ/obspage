@@ -27,6 +27,11 @@
     background-color: var(--official-gold);
   }
 
+  @font-face {
+    font-family: Bajern;
+    src: url('../../static/fonts/Bajern.otf') format('truetype');
+  }
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -98,7 +103,7 @@
     width: 100%;
     min-width: 200px;
     max-width: 230px;
-    height: 340px;
+    height: 360px;
     margin: 15px 25px 0;
     padding: 15px 0px;
     background-color: var(--white-transparent);
@@ -134,6 +139,25 @@
     margin-bottom: 20px;
   }
 
+  .booking-container--card--name {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .booking-container--card--name h3 {
+    font-family: 'Bajern', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: lighter;
+    color: var(--official-gold);
+    margin-bottom: 10px;
+    margin-top: -20px;
+  }
+
   .card-background-svg {
     position: absolute;
     top: 0;
@@ -167,8 +191,8 @@
   }
   
   .booking-container--card--btn {
-    width: 150px;
-    height: 45px;
+    width: 120px;
+    height: 35px;
     margin-top: 0px;
     background-color: var(--white-transparent);
     border: 2px solid var(--official-gold);
@@ -176,7 +200,8 @@
     color: var(--white);
     font-weight: bold;
     line-height: 1.8rem;
-    z-index: 2;
+    z-index: 1;
+    cursor: pointer;
   }
   
   .booking-container--card--btn:hover {
